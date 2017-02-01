@@ -14,3 +14,6 @@ RUN mkdir -p /tmp/lp-build && cd /tmp/lp-build && \
   make install && \
   cd / && \
   rm -rf /tmp/lp-build
+
+  RUN apk del snappy-dev autoconf automake libtool pkgconf findutils git coreutils curl
+  

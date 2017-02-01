@@ -1,5 +1,5 @@
 IMAGENAME ?= normrider/node-postal
-IMAGETAG ?= dev
+IMAGETAG ?= wercker
 
 .PHONY: all build clean publish
 
