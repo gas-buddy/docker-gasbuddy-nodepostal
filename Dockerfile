@@ -1,8 +1,9 @@
-FROM gasbuddy/node-app:6-shell
+FROM node
 
 MAINTAINER Craig Norman <cnorman@gasbuddy.com>
 
-RUN apk add --no-cache snappy-dev autoconf automake libtool pkgconf findutils git coreutils curl
+RUN apt-get update
+RUN apt-get -y install libgnome-keyring-dev curl libsnappy-dev autoconf automake libtool pkg-config
 
 RUN mkdir -p /tmp/lp-build && cd /tmp/lp-build && \
   git clone https://github.com/openvenues/libpostal && \
@@ -11,9 +12,7 @@ RUN mkdir -p /tmp/lp-build && cd /tmp/lp-build && \
   mkdir -p /usr/local/share/libpostal && \
   ./configure --datadir=/usr/local/share && \
   make && \
-  make install && \
+  make install && \ 
+  ldconfig && \
   cd / && \
   rm -rf /tmp/lp-build
-
-  RUN apk del snappy-dev autoconf automake libtool pkgconf findutils git coreutils curl
-  
