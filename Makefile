@@ -1,5 +1,5 @@
-IMAGENAME ?= normrider/node-postal
-IMAGETAG ?= dev
+IMAGENAME ?= gasbuddy/node-postal
+IMAGETAG ?= production
 
 .PHONY: all build clean publish
 
