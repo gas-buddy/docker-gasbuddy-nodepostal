@@ -2,7 +2,7 @@ FROM gasbuddy/node-app:6-shell
 
 MAINTAINER Craig Norman <cnorman@gasbuddy.com>
 
-RUN apk add --no-cache snappy-dev autoconf automake libtool pkgconf findutils coreutils && \
+RUN apk add --no-cache snappy-dev autoconf automake libtool pkgconf findutils coreutils
 
 RUN mkdir -p /tmp/lp-build && cd /tmp/lp-build && \
     git clone https://github.com/openvenues/libpostal && \
@@ -13,5 +13,4 @@ RUN mkdir -p /tmp/lp-build && cd /tmp/lp-build && \
     make && \
     make install && \
     cd / && \
-    rm -rf /tmp/lp-build && \
-    apk del snappy-dev autoconf automake libtool pkgconf findutils
+    rm -rf /tmp/lp-build
