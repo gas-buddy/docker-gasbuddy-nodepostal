@@ -1,4 +1,4 @@
-FROM gasbuddy/node-app:6-production
+FROM gasbuddy/node-app:10-production
 
 MAINTAINER Craig Norman <cnorman@gasbuddy.com>
 
