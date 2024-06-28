@@ -1,5 +1,5 @@
 IMAGENAME ?= gasbuddy/node-postal
-IMAGETAG ?= 10-wercker
+IMAGETAG ?= 14-wercker
 
 .PHONY: all build clean publish
 
