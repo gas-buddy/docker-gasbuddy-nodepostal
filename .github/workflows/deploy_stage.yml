@@ -1,0 +1,20 @@
+name: Build, Publish and Deploy to Staging Only
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted-k8s
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build and Publish to Staging ECR
+        uses: gas-buddy/build-push-ecr@v5
+        with:
+          aws-access-key-id: ${{ secrets.AWS_STAGE_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_STAGE_SECRET_ACCESS_KEY }}
+          registry-name: node-postal
+          image-tag: 14-werckertest
