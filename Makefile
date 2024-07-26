@@ -6,7 +6,7 @@ IMAGETAG ?= 14-wercker
 all: build
 
 build:
-	docker build --no-cache --pull -t $(IMAGENAME):$(IMAGETAG) .
+	docker build --platform linux/amd64 --no-cache --pull -t $(IMAGENAME):$(IMAGETAG) .
 
 clean:
 	docker images | awk -F' ' '{if ($$1=="$(IMAGENAME)" && $$2=="$(IMAGETAG)") print $$3}' | xargs docker rmi
