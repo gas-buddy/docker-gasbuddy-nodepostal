@@ -1,5 +1,5 @@
-IMAGENAME ?= gasbuddy/node-postal
-IMAGETAG ?= 14-wercker
+IMAGENAME ?= 267230788984.dkr.ecr.us-east-1.amazonaws.com/node-postal
+IMAGETAG ?= wercker-node14-1.1
 
 .PHONY: all build clean publish
 
